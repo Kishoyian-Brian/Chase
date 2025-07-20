@@ -1,50 +1,42 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 export default function Accounts() {
-  const [checking, setChecking] = useState(37663.74);
-  const [savings, setSavings] = useState(5025.00);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setChecking(prev => {
-        const change = (Math.random() - 0.5) * 1000;
-        return Math.max(0, +(prev + change).toFixed(2));
-      });
-      setSavings(prev => {
-        const change = (Math.random() - 0.5) * 200;
-        return Math.max(0, +(prev + change).toFixed(2));
-      });
-    }, 60000); // 1 minute
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="px-6">
-      <div className="mb-2">
-        <h2 className="text-base font-semibold text-black">Accounts</h2>
+    <div className="px-4 pt-4">
+      <div className="mb-2 flex items-center justify-between">
+        <h2 className="text-xl font-semibold text-gray-800">Accounts</h2>
+        {/* Three-dot menu icon */}
+        <button className="text-gray-400 hover:text-gray-600 p-1 rounded-full focus:outline-none">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+            <circle cx="5" cy="12" r="1.5" />
+            <circle cx="12" cy="12" r="1.5" />
+            <circle cx="19" cy="12" r="1.5" />
+          </svg>
+        </button>
       </div>
-      <div className="space-y-2">
-        {/* Bank Accounts Header */}
-        <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-sm">Bank accounts (2)</div>
-        {/* Checking Account */}
-        <div className="bg-white border border-gray-200 rounded-lg p-4 flex flex-col gap-1">
-          <span className="text-xs text-gray-500">TOTAL CHECKING (...9509)</span>
-          <span className="text-2xl font-semibold text-black">${checking.toLocaleString()}</span>
-          <span className="text-xs text-gray-500">Available balance</span>
+      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+        {/* 1. Blue Header */}
+        <div className="bg-blue-800 text-white px-4 py-2 font-medium text-sm rounded-t-2xl">
+          Bank accounts (1)
         </div>
-        {/* Savings Account */}
-        <div className="bg-white border border-gray-200 rounded-lg p-4 flex flex-col gap-1">
-          <span className="text-xs text-gray-500">CHASE SAVINGS (...9873)</span>
-          <span className="text-2xl font-semibold text-black">${savings.toLocaleString()}</span>
-          <span className="text-xs text-gray-500">Available balance</span>
+        {/* 2. Left: Account Type */}
+        <div className="px-4 pt-8 pb-4 flex items-center">
+          <div className="flex-1 text-base text-gray-700 font-medium">
+            TOTAL CHECKING (...5830)
+          </div>
         </div>
-        {/* Link External Accounts */}
-        <div className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between cursor-pointer">
-          <span className="text-gray-600 text-sm">Link external accounts</span>
+        {/* 3. Right: Amount and Balance */}
+        <div className="px-4 flex flex-col items-end justify-center min-w-[160px] mt-8 mb-4">
+          <span className="text-3xl font-semibold text-black">$10,874.92</span>
+          <span className="text-base text-gray-500 mt-1">Available balance</span>
+        </div>
+        {/* 4. Link External Accounts Row */}
+        <button className="w-full flex items-center justify-between px-4 py-4 border-t border-gray-100 bg-gray-50 hover:bg-gray-100 focus:outline-none">
+          <span className="text-gray-800 text-base">Link external accounts</span>
           <ChevronRight className="w-5 h-5 text-gray-400" />
-        </div>
+        </button>
       </div>
     </div>
   );
