@@ -3,6 +3,8 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 export default function Accounts() {
+  // Generate a random amount between 5,000 and 20,000 for demo purposes
+  const amount = (Math.random() * 15000 + 5000).toFixed(2);
   return (
     <div className="px-4 pt-4">
       <div className="mb-2 flex items-center justify-between">
@@ -29,7 +31,7 @@ export default function Accounts() {
         </div>
         {/* 3. Right: Amount and Balance */}
         <div className="px-4 flex flex-col items-end justify-center min-w-[160px] mt-8 mb-4">
-          <span className="text-3xl font-semibold text-black">$10,874.92</span>
+          <span className="text-3xl font-semibold text-black">${`${amount}`}</span>
           <span className="text-base text-gray-500 mt-1">Available balance</span>
         </div>
         {/* 4. Link External Accounts Row */}

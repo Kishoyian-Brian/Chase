@@ -2,6 +2,9 @@ import React from 'react';
 import { Wifi, CreditCard, User } from 'lucide-react';
 
 export default function Header() {
+  // Get current date formatted as 'Month Day, Year'
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   return (
     <div className="bg-white">
       {/* Top Bar with Icons */}
@@ -29,7 +32,7 @@ export default function Header() {
       {/* Greeting and Date */}
       <div className="px-6 pb-4">
         <h1 className="text-2xl font-semibold text-black mb-1">Good morning</h1>
-        <p className="text-gray-500 text-sm">August 31, 2024</p>
+        <p className="text-gray-500 text-sm">{formattedDate}</p>
       </div>
     </div>
   );
