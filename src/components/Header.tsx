@@ -19,10 +19,10 @@ export default function Header() {
           </span>
           <CreditCard className="w-6 h-6 text-gray-800" />
         </div>
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex justify-center items-center absolute left-1/2 transform -translate-x-1/2">
           <div className="w-20 h-20 flex items-center justify-center">
             {/* Official Chase Bank logo image */}
-            <img src="https://i.pinimg.com/1200x/ef/a9/1e/efa91e94e6b87acdc1674ae337156555.jpg" alt="Chase Bank Logo" className="w-20 h-20 object-contain" />
+            <img src="/efa91e94e6b87acdc1674ae337156555-removebg-preview.png" alt="Chase Bank Logo" className="w-20 h-20 object-contain" />
           </div>
         </div>
         <div>
@@ -30,7 +30,7 @@ export default function Header() {
         </div>
       </div>
       {/* Greeting and Date */}
-      <div className="px-6 pb-4">
+      <div className="px-6 pb-4 mt-4">
         <h1 className="text-2xl font-semibold text-black mb-1">Good morning</h1>
         <p className="text-gray-500 text-sm">{formattedDate}</p>
       </div>
