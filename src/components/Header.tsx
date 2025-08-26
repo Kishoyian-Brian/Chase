@@ -20,9 +20,9 @@ export default function Header() {
           <CreditCard className="w-6 h-6 text-gray-800" />
         </div>
         <div className="flex-1 flex justify-center items-center">
-          <div className="w-12 h-12 flex items-center justify-center">
+          <div className="w-20 h-20 flex items-center justify-center">
             {/* Official Chase Bank logo image */}
-            <img src="https://logos-world.net/wp-content/uploads/2020/11/Chase-Emblem.png" alt="Chase Bank Logo" className="w-10 h-10 object-contain" />
+            <img src="https://i.pinimg.com/1200x/ef/a9/1e/efa91e94e6b87acdc1674ae337156555.jpg" alt="Chase Bank Logo" className="w-20 h-20 object-contain" />
           </div>
         </div>
         <div>
